@@ -14,15 +14,14 @@ import java.util.Map;
  * @author Tony Field
  * @since 2024-11-04 07:21
  */
-@Controller("/")
+@Controller
 public class FormController {
 
     @Get
     public ModelAndView<Map<String,String>> form() {
         var model = new HashMap<String,String>();
         model.put("title", "Multipart Form Test");
-        var mav = new ModelAndView("multipart-form.ftlh", model);
-        return mav;
+       return new ModelAndView<>("multipart-form.ftlh", model);
     }
 
     @Post("/post1")
@@ -34,8 +33,7 @@ public class FormController {
         model.put("text1", text1);
         model.put("text2", text2);
         model.put("text3", text3);
-        var mav = new ModelAndView("multipart-form-result.ftlh", model);
-        return mav;
+        return new ModelAndView<>("multipart-form-result.ftlh", model);
     }
 
     @Post("/post2")
@@ -51,8 +49,7 @@ public class FormController {
         model.put("text1", text1);
         model.put("text2", text2);
         model.put("text3", text3);
-        var mav = new ModelAndView("multipart-form-result.ftlh", model);
-        return mav;
+        return new ModelAndView<>("multipart-form-result.ftlh", model);
     }
 
 }
