@@ -15,17 +15,8 @@ dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
-
-    // runtime system (minimum servlet 4.9 - requires override)
-    implementation 'io.micronaut.servlet:micronaut-servlet-api:4.9.2'
-    implementation 'io.micronaut.servlet:micronaut-servlet-engine:4.9.2'
-    implementation 'io.micronaut.servlet:micronaut-http-server-tomcat:4.9.2'
-    implementation 'io.micronaut.reactor:micronaut-reactor'
-    implementation 'io.projectreactor:reactor-core'
-
     implementation 'io.micronaut.views:micronaut-views-freemarker'
 }
-
 
 application {
     mainClass = "com.example.Application"
@@ -34,7 +25,6 @@ java {
     sourceCompatibility = JavaVersion.toVersion("21")
     targetCompatibility = JavaVersion.toVersion("21")
 }
-
 
 graalvmNative.toolchainDetection = false
 
@@ -58,9 +48,6 @@ micronaut {
     }
 }
 
-
 tasks.named("dockerfileNative") {
     jdkVersion = "21"
 }
-
-
