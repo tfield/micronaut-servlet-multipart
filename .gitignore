@@ -5,11 +5,9 @@ build/
 target/
 out/
 .micronaut/
-.idea
-*.iml
-*.ipr
-*.iws
+/.idea/aws.xml
 .project
 .settings
 .classpath
 .factorypath
+/tomcat.8080/
