@@ -1,26 +1,18 @@
-## Micronaut 4.6.3 Documentation
+## Micronaut Multipart Form Decoding Demo
 
-- [User Guide](https://docs.micronaut.io/4.6.3/guide/index.html)
-- [API Reference](https://docs.micronaut.io/4.6.3/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/4.6.3/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+This project explores a problem in Micronaut 4.4.2 using Servlet and Multipart Form Decoding.
 
-- [Micronaut Gradle Plugin documentation](https://micronaut-projects.github.io/micronaut-gradle-plugin/latest/)
-- [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
-- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-## Feature tomcat-server documentation
+In this example, we'll post a multipart form with "smart quotes" and long dashes to Micronaut using Tomcat.
 
-- [Micronaut Tomcat Server documentation](https://micronaut-projects.github.io/micronaut-servlet/latest/guide/index.html#tomcat)
+We will then extract that data 5 different ways.
 
+It seems that the `@Part` annotation works correctly, but the `@Body` annotation converts strings using the wrong charset. This should be fixed so that string data is interpreted using `UTF8` not `latin1`.
 
-## Feature micronaut-aot documentation
+It's important to fix this, because forms whose fields are dynamically appended do not have the option of using the `@Part` annotation.
 
-- [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
-
-
-## Feature serialization-jackson documentation
-
-- [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
+## Running the project
+- Start mincronaut per usual
+- Visit http://localhost:8080/ in your browser
+- Submit each of the 5 different forms in turn to see the behaviour.  You'll see that #3 fails. #4 errors (demonstrating a guess that perhaps raw bytes are available in `@Body`, which turned out to not be the case), and #5 shows a hack that fixes the bytes and hopefully helps pinpoint the problem in the codebase.
 
 
