@@ -61,7 +61,7 @@ public class FormController {
         String text3 = (String) form.get("text3").getFirst();
 
         var model = new HashMap<String, String>();
-        model.put("title", "Multipart Form Post 2");
+        model.put("title", "Multipart Form Post 3");
         model.put("msg", "Using @Body and extracting strings");
         model.put("text1", text1);
         model.put("text2", text2);
@@ -77,7 +77,7 @@ public class FormController {
         String text3 = new String((byte[]) form.get("text3").getFirst());
 
         var model = new HashMap<String, String>();
-        model.put("title", "Multipart Form Post 2");
+        model.put("title", "Multipart Form Post 4");
         model.put("msg", "Using @Body and extracting bytes");
         model.put("text1", text1);
         model.put("text2", text2);
@@ -93,8 +93,8 @@ public class FormController {
         String text3 = extractStringForPost5(form.get("text3").getFirst());
 
         var model = new HashMap<String, String>();
-        model.put("title", "Multipart Form Post 2");
-        model.put("msg", "Using @Body and extracting bytes");
+        model.put("title", "Multipart Form Post 5");
+        model.put("msg", "Using @Body and fixing extracted bytes");
         model.put("text1", text1);
         model.put("text2", text2);
         model.put("text3", text3);

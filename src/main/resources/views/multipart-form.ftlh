@@ -16,17 +16,17 @@
     <@showFormFields />
 </form>
 
-<h2>Form 3 - post to @Body</h2>
+<h2>Form 3 - post to @Body and pull strings</h2>
 <form method="post" action="/post3" enctype="multipart/form-data">
     <@showFormFields />
 </form>
 
-<h2>Form 4 - post to @Body</h2>
+<h2>Form 4 - post to @Body and pull bytes</h2>
 <form method="post" action="/post4" enctype="multipart/form-data">
     <@showFormFields />
 </form>
 
-<h2>Form 5 - post to @Body and Fix</h2>
+<h2>Form 5 - post to @Body and fix strings</h2>
 <form method="post" action="/post5" enctype="multipart/form-data">
     <@showFormFields />
 </form>
