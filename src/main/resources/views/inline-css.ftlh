@@ -15,10 +15,5 @@
     input[type="submit"] {
         margin: 10px 0;
         padding: 10px;
-        font-size: 1.2em;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
     }
 </style>
